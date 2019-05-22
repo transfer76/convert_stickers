@@ -1,6 +1,7 @@
 # coding: UTF-8
 require 'telegram/bot'
 require 'dotenv/load'
+require 'open-uri'
 require 'webp-ffi'
 
 TOKEN = ENV['TELEGRAM_BOT_API_TOKEN'].freeze
