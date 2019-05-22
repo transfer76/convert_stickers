@@ -17,13 +17,19 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
         sticker = rqst.sticker
 
         if sticker
+          # get sticker path(name) from hash
           sticker_path = bot.api.get_file(file_id: sticker.file_id)['result']['file_path']
 
+          #get sticker webp format
           filename = File.expand_path(File.join(File.dirname(__FILE__), "pic.webp"))
+          #get sticker png format
           out_filename = File.expand_path(File.join(File.dirname(__FILE__), "pic.png"))
+
+          #write converted file
           File.write(filename, open("https://api.telegram.org/file/bot#{TOKEN}/#{sticker_path}").read)
           WebP.decode(filename, out_filename)
 
+          #send converted photo to chat
           bot.api.send_photo(chat_id: rqst.chat.id, photo: Faraday::UploadIO.new(out_filename, 'image/png'))
         else
           bot.api.send_message(chat_id: rqst.chat.id, text: "That was not a sticker....try again!")
