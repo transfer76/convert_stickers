@@ -29,7 +29,8 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
           File.write(filename, open("https://api.telegram.org/file/bot#{TOKEN}/#{sticker_path}").read)
           WebP.decode(filename, out_filename)
 
-          #send converted photo to chat
+          bot.api.send_message(chat_id: rqst.chat.id, text: "Send for you converted sticker. You can save it on your devise")
+              #send converted photo to chat
           bot.api.send_photo(chat_id: rqst.chat.id, photo: Faraday::UploadIO.new(out_filename, 'image/png'))
         else
           bot.api.send_message(chat_id: rqst.chat.id, text: "That was not a sticker....try again!")
