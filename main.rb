@@ -1,6 +1,8 @@
 # coding: UTF-8
 require 'telegram/bot'
 require 'dotenv/load'
+require 'open-uri'
+require 'webp-ffi'
 
 TOKEN = ENV['TELEGRAM_BOT_API_TOKEN'].freeze
 
@@ -15,7 +17,7 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
       else
         sticker = rqst.sticker
         if sticker
-          sticker_path = bot.api.get_file(file_id: sticker.file_id).file_path
+          sticker_path = bot.api.get_file(file_id: sticker.file_id)['result']['file_path']
           f = open("https://api.telegram.org/file/bot#{TOKEN}/#{sticker_path}")
           File.write('sticker.png', f.read)
           f.close
