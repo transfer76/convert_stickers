@@ -7,3 +7,7 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "telegram-bot-ruby"
 gem "dotenv"
 gem "webp-ffi"
+
+group :development, :test do
+  gem 'rspec'
+end
