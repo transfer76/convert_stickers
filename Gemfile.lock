@@ -45,7 +45,7 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    webp-ffi (0.2.7)
+    webp-ffi (0.2.5)
       ffi (>= 1.9.0)
       ffi-compiler (>= 0.1.2)
 
@@ -56,7 +56,7 @@ DEPENDENCIES
   dotenv
   rspec
   telegram-bot-ruby
-  webp-ffi (~> 0.2.5)
+  webp-ffi (= 0.2.5)
 
 BUNDLED WITH
    2.0.1
