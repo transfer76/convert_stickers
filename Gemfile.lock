@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -20,7 +21,12 @@ GEM
       rake
     ice_nine (0.11.2)
     inflecto (0.0.2)
+    jaro_winkler (1.5.2)
     multipart-post (2.1.1)
+    parallel (1.13.0)
+    parser (2.6.0.0)
+      ast (~> 2.4.0)
+    rainbow (3.0.0)
     rake (12.3.2)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
@@ -35,11 +41,20 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
+    rubocop (0.70.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.6)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    ruby-progressbar (1.10.0)
     telegram-bot-ruby (0.9.1)
       faraday
       inflecto
       virtus
     thread_safe (0.3.6)
+    unicode-display_width (1.4.1)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -55,6 +70,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   rspec
+  rubocop
   telegram-bot-ruby
   webp-ffi (= 0.2.5)
 
