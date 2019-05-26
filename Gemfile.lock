@@ -23,8 +23,8 @@ GEM
     inflecto (0.0.2)
     jaro_winkler (1.5.2)
     multipart-post (2.1.1)
-    parallel (1.13.0)
-    parser (2.6.0.0)
+    parallel (1.17.0)
+    parser (2.6.3.0)
       ast (~> 2.4.0)
     rainbow (3.0.0)
     rake (12.3.2)
@@ -54,13 +54,13 @@ GEM
       inflecto
       virtus
     thread_safe (0.3.6)
-    unicode-display_width (1.4.1)
+    unicode-display_width (1.6.0)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    webp-ffi (0.2.5)
+    webp-ffi (0.2.7)
       ffi (>= 1.9.0)
       ffi-compiler (>= 0.1.2)
 
@@ -72,7 +72,7 @@ DEPENDENCIES
   rspec
   rubocop
   telegram-bot-ruby
-  webp-ffi (= 0.2.5)
+  webp-ffi
 
 BUNDLED WITH
    2.0.1
